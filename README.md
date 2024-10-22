@@ -1,2 +1,1 @@
-# template-python-fastapi-repo
-A template Python repository with venv, requirements, and readme
+This repository is empty. Any task executed on it should be considered a new capability and needs to be created.
