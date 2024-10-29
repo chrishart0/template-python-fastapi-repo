@@ -37,6 +37,10 @@ Follow these steps to set up the project:
 5. **Setup your .env**
 Copy the `.env.example` file to `.env` and update the values:
 
+6. **Optional: Setup pre-commit hook**
+```
+pre-commit install
+```
 
 ## Running the FastAPI server
 

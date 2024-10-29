@@ -1,12 +1,12 @@
 from pydantic import BaseModel
 from fastapi import FastAPI, HTTPException
 from settings import settings
-from loguru import logger
+from helpers.logger_helper import get_logger
 
 app = FastAPI()
 
-# Configure logger
-logger.add("file_{time}.log", rotation="1 day", retention="7 days", level="INFO")
+# Get the configured logger
+logger = get_logger()
 
 
 class HelloWorld(BaseModel):
