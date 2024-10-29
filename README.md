@@ -143,3 +143,9 @@ def create_hello_world(message: str) -> HelloWorld:
 # Example usage
 create_hello_world("Hello, World!")
 ```
+
+# ToDo:
+
+- Contributions Guide
+- FastAPI Streaming
+- FastAPI with Queue
