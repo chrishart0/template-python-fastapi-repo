@@ -8,7 +8,9 @@ class Settings(BaseSettings):
     API_KEY: str
     DATABASE_URL: str
 
-    class Config:
-        env_file = ".env"
+    # Use ConfigDict instead of class Config
+    model_config = {
+        "env_file": ".env"
+    }
 
 settings = Settings()
