@@ -27,10 +27,16 @@ jobs:
     - name: Create .env file
       run: cp .env.example .env
 
-    - name: Run linter
+    - name: Run black formatter
       run: |
         source .venv/bin/activate
-        python -m black --check .
+        echo "Running black... if this fails, run `python -m black .` to fix the issues"
+        python -m black --check . # If this fails, run `python -m black .` to fix the issues
+
+    - name: Run flake8 linter
+      run: |
+        source .venv/bin/activate
+        flake8 .
 
     - name: Run tests with coverage
       run: |
