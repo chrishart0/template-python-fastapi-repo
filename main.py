@@ -1,5 +1,6 @@
 from pydantic import BaseModel
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from settings import settings
 
 app = FastAPI()
 
@@ -43,7 +44,10 @@ def multiply_endpoint(a: float, b: float):
 
 @app.get("/divide")
 def divide_endpoint(a: float, b: float):
-    return {"result": divide(a, b)}
+    try:
+        return {"result": divide(a, b)}
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
 # Example usage
 create_hello_world("Hello, world!")
@@ -51,3 +55,7 @@ print(add(1, 2))
 print(subtract(5, 3))
 print(multiply(4, 2))
 print(divide(10, 2))
+
+# Use the loaded settings
+print(f"API_KEY: {settings.API_KEY}")
+print(f"DATABASE_URL: {settings.DATABASE_URL}")

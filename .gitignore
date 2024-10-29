@@ -1,8 +1,12 @@
-# Ignore virtual environment directory
+# Python Stuff
 .venv
-
-# Ignore Python cache files
 __pycache__
 
-# Ignore code coverage files
+# Coverage
 .coverage
+
+# MacOS file
+.DS_Store
+
+# Environment variables
+.env

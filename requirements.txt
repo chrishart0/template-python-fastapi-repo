@@ -1,6 +1,8 @@
 requests
+httpx
 pytest
 pydantic
+pydantic-settings
 fastapi
 uvicorn
 pytest-cov
