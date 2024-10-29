@@ -85,6 +85,11 @@ This project uses environment variables to manage sensitive information and conf
    DATABASE_URL=your_database_url_here
    ```
 
+2. **Run the needed services:**
+   ```sh
+   docker-compose up -d
+   ```
+
 2. **Run the FastAPI server:**
    Use the following command to run the FastAPI server:
    ```sh
@@ -123,6 +128,4 @@ create_hello_world("Hello, World!")
 
 # ToDo:
 
-- Contributions Guide
-- FastAPI Streaming
 - FastAPI with Queue

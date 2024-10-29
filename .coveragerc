@@ -1,6 +1,7 @@
 [run]
 source = template_python_fastapi_repo
 branch = True
+data_file = .coverage
 omit =
     **/test_*.py
     */test_*.py
