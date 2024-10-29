@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from fastapi import FastAPI, HTTPException
-from settings import settings
-from helpers.logger_helper import get_logger
+from template_python_fastapi_repo.settings import settings
+from template_python_fastapi_repo.helpers.logger_helper import get_logger
 
 app = FastAPI()
 

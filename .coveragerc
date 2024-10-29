@@ -1,0 +1,16 @@
+[run]
+source = template_python_fastapi_repo
+branch = True
+
+[report]
+# Include the following settings to improve the readability of the coverage report
+show_missing = True
+skip_covered = False
+sort = Cover
+precision = 2
+
+[html]
+directory = coverage_html_report
+
+[xml]
+output = coverage.xml

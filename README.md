@@ -30,9 +30,13 @@ Follow these steps to set up the project:
      .venv\Scripts\activate
      ```
 
-4. **Install dependencies:**
+4. **Install dependencies with Poetry:**
+   Check if you have poetry by running `poetry --version`
+
+   If you don't have poetry, go install it: <https://python-poetry.org/docs/>
+
    ```sh
-   pip install -r requirements.txt
+   poetry install
    ```
 
 5. **Setup your .env**
@@ -47,8 +51,10 @@ pre-commit install
 
 To run the FastAPI server, use the following command:
 ```sh
-uvicorn main:app --reload
+uvicorn template_python_fastapi_repo.main:app --reload
 ```
+
+Now navigate to <http://127.0.0.1:8000/docs> and you will see the running FastAPI OpenAI spec
 
 ## Testing
 
@@ -58,13 +64,14 @@ This project includes code coverage requirements to ensure the quality of the co
 
 To run the tests and measure code coverage, use the following command:
 ```sh
-pytest --cov=main --cov-report=term-missing
+poetry run pytest --cov --cov-report=term-missing
 ```
 
 ## Linting
 
 ```bash
-python -m black .
+poetry run black .
+poetry run flake8 .
 ```
 
 ## Environment Variables
@@ -78,42 +85,12 @@ This project uses environment variables to manage sensitive information and conf
    DATABASE_URL=your_database_url_here
    ```
 
-2. **Create a `settings.py` file:**
-   Create a `settings.py` file in the root of the repository with the following content:
-   ```python
-   from pydantic import BaseSettings
-   from dotenv import load_dotenv
-   import os
-
-   load_dotenv()
-
-   class Settings(BaseSettings):
-       API_KEY: str
-       DATABASE_URL: str
-
-       class Config:
-           env_file = ".env"
-
-   settings = Settings()
-   ```
-
-3. **Update `main.py` to use the settings:**
-   Import the `Settings` class from `settings.py` and use the loaded settings in the FastAPI app. For example:
-   ```python
-   from settings import settings
-
-   # Use the loaded settings
-   print(f"API_KEY: {settings.API_KEY}")
-   print(f"DATABASE_URL: {settings.DATABASE_URL}")
-   ```
-
-4. **Run the FastAPI server:**
+2. **Run the FastAPI server:**
    Use the following command to run the FastAPI server:
    ```sh
-   uvicorn main:app --reload
+   uvicorn template_python_fastapi_repo.main:app --reload
    ```
-
-5. **Verify the settings:**
+3. **Verify the settings:**
    Ensure that the environment variables are loaded correctly by checking the output of the FastAPI server or running the tests.
 
 ## Basic Pydantic Model
