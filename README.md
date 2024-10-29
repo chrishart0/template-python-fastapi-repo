@@ -126,6 +126,36 @@ def create_hello_world(message: str) -> HelloWorld:
 create_hello_world("Hello, World!")
 ```
 
+## Updating Your Repository
+
+If you have created a repository from this template and want to update it with the latest changes from the template, follow these steps:
+
+1. **Add the template repository as a remote:**
+   ```sh
+   git remote add template https://github.com/chrishart0/template-python-fastapi-repo.git
+   ```
+
+2. **Fetch the latest changes from the template:**
+   ```sh
+   git fetch template
+   ```
+
+3. **Merge the changes into your main branch:**
+   ```sh
+   git checkout main
+   git merge template/main
+   ```
+
+4. **Resolve any merge conflicts:**
+   If there are any merge conflicts, resolve them in your code editor and commit the changes.
+
+5. **Push the updates to your repository:**
+   ```sh
+   git push origin main
+   ```
+
+By following these steps, you can keep your project up-to-date with the latest improvements and features from the template repository.
+
 # ToDo:
 
-- FastAPI with Queue
+- Maybe add a UI
