@@ -1,4 +1,5 @@
-# Project Setup
+# Template Python FastAPI Repo
+[![CI](https://github.com/chrishart0/template-python-fastapi-repo/actions/workflows/ci.yml/badge.svg)](https://github.com/chrishart0/template-python-fastapi-repo/actions/workflows/ci.yml)
 
 ## Instructions
 
