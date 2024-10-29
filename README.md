@@ -1,5 +1,6 @@
 # Template Python FastAPI Repo
 [![CI](https://github.com/chrishart0/template-python-fastapi-repo/actions/workflows/ci.yml/badge.svg)](https://github.com/chrishart0/template-python-fastapi-repo/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/github/chrishart0/template-python-fastapi-repo/graph/badge.svg?token=6QFK2BOQ54)](https://codecov.io/github/chrishart0/template-python-fastapi-repo)
 
 ## Instructions
 
