@@ -26,6 +26,9 @@ def divide(a: float, b: float) -> float:
         raise ValueError("Cannot divide by zero")
     return a / b
 
+def power(base: float, exponent: float) -> float:
+    return base ** exponent
+
 @app.get("/hello", response_model=HelloWorld)
 def hello_world_endpoint():
     return create_hello_world("Hello, world!")
@@ -49,12 +52,17 @@ def divide_endpoint(a: float, b: float):
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
+@app.get("/power")
+def power_endpoint(base: float, exponent: float):
+    return {"result": power(base, exponent)}
+
 # Example usage
 create_hello_world("Hello, world!")
 print(add(1, 2))
 print(subtract(5, 3))
 print(multiply(4, 2))
 print(divide(10, 2))
+print(power(2, 3))
 
 # Use the loaded settings
 print(f"API_KEY: {settings.API_KEY}")

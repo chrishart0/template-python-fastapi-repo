@@ -1,6 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
-from main import app, HelloWorld, create_hello_world, add, subtract, multiply, divide
+from main import app, HelloWorld, create_hello_world, add, subtract, multiply, divide, power
 from settings import settings
 
 client = TestClient(app)
@@ -27,6 +27,14 @@ def test_divide():
 
     with pytest.raises(ValueError):
         divide(10, 0)
+
+def test_power():
+    assert power(2, 3) == 8
+
+def test_power_endpoint():
+    response = client.get("/power?base=2&exponent=3")
+    assert response.status_code == 200
+    assert response.json() == {"result": 8}
 
 def test_hello_world_endpoint():
     response = client.get("/hello")
