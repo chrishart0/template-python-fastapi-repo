@@ -11,7 +11,7 @@ Follow these steps to set up the project:
    ```sh
    # Install specific Python version
    pyenv install 3.12
-
+   pyenv local 3.12
    ```
 
 2. **Create a virtual environment:**

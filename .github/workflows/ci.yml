@@ -27,6 +27,11 @@ jobs:
     - name: Create .env file
       run: cp .env.example .env
 
+    - name: Run flake8 linter
+      run: |
+        source .venv/bin/activate
+        flake8 .
+
     - name: Run tests with coverage
       run: |
         source .venv/bin/activate

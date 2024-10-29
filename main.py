@@ -1,15 +1,20 @@
 from pydantic import BaseModel
 from fastapi import FastAPI, HTTPException
 from settings import settings
+from loguru import logger
 
 app = FastAPI()
+
+# Configure logger
+logger.add("file_{time}.log", rotation="1 day", retention="7 days", level="INFO")
+
 
 class HelloWorld(BaseModel):
     message: str
 
 def create_hello_world(message: str) -> HelloWorld:
     hello_world = HelloWorld(message=message)
-    print(hello_world)
+    logger.info(hello_world)
     return hello_world
 
 def add(a: float, b: float) -> float:
@@ -58,12 +63,12 @@ def power_endpoint(base: float, exponent: float):
 
 # Example usage
 create_hello_world("Hello, world!")
-print(add(1, 2))
-print(subtract(5, 3))
-print(multiply(4, 2))
-print(divide(10, 2))
-print(power(2, 3))
+logger.info(add(1, 2))
+logger.info(subtract(5, 3))
+logger.info(multiply(4, 2))
+logger.info(divide(10, 2))
+logger.info(power(2, 3))
 
 # Use the loaded settings
-print(f"API_KEY: {settings.API_KEY}")
-print(f"DATABASE_URL: {settings.DATABASE_URL}")
+logger.info(f"API_KEY: {settings.API_KEY}")
+logger.info(f"DATABASE_URL: {settings.DATABASE_URL}")
