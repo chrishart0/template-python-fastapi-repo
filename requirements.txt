@@ -6,6 +6,8 @@ loguru==0.7.2             # https://pypi.org/project/loguru/
 fastapi==0.115.4          # https://pypi.org/project/fastapi/
 uvicorn==0.32.0           # https://pypi.org/project/uvicorn/
 
+# Linting and Formatting
+black==24.10.0            # https://pypi.org/project/black/
 flake8==7.1.1             # https://pypi.org/project/flake8/
 
 # Testing

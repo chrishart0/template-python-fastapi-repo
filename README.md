@@ -45,7 +45,7 @@ To run the FastAPI server, use the following command:
 uvicorn main:app --reload
 ```
 
-## Code Coverage Requirements
+## Testing
 
 This project includes code coverage requirements to ensure the quality of the code. To measure code coverage, we use `pytest-cov`.
 
@@ -54,6 +54,12 @@ This project includes code coverage requirements to ensure the quality of the co
 To run the tests and measure code coverage, use the following command:
 ```sh
 pytest --cov=main --cov-report=term-missing
+```
+
+## Linting
+
+```bash
+python -m black .
 ```
 
 ## Environment Variables

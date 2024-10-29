@@ -27,10 +27,10 @@ jobs:
     - name: Create .env file
       run: cp .env.example .env
 
-    - name: Run flake8 linter
+    - name: Run linter
       run: |
         source .venv/bin/activate
-        flake8 .
+        python -m black --check .
 
     - name: Run tests with coverage
       run: |
