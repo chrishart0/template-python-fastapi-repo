@@ -5,6 +5,8 @@ __pycache__
 # Coverage
 .coverage
 coverage.xml
+*.cover
+*.py,cover
 
 # MacOS file
 .DS_Store
