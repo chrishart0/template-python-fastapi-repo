@@ -10,6 +10,3 @@ class Settings(BaseSettings):
 
     # Use ConfigDict instead of class Config
     model_config = {"env_file": ".env"}
-
-
-settings = Settings()

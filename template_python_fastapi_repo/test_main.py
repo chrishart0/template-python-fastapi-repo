@@ -1,4 +1,5 @@
 import pytest
+from unittest.mock import patch, MagicMock
 from fastapi.testclient import TestClient
 from template_python_fastapi_repo.main import (
     app,
@@ -10,10 +11,22 @@ from template_python_fastapi_repo.main import (
     divide,
     power,
 )
-from template_python_fastapi_repo.settings import settings
+from template_python_fastapi_repo.settings import Settings
 import json
 
 client = TestClient(app)
+
+
+@pytest.fixture(autouse=True)
+def mock_settings():
+    mock_settings = MagicMock()
+    mock_settings.API_KEY = "mock_api_key"
+    mock_settings.DATABASE_URL = "mock_database_url"
+
+    with patch(
+        "template_python_fastapi_repo.main.Settings", return_value=mock_settings
+    ):
+        yield
 
 
 def test_hello_world_model():
@@ -89,6 +102,7 @@ def test_divide_endpoint():
 
 
 def test_settings_loaded():
+    settings = Settings()
     assert settings.API_KEY == "your_api_key_here"
     assert settings.DATABASE_URL == "your_database_url_here"
 

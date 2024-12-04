@@ -3,7 +3,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
 import asyncio
 import json
-from template_python_fastapi_repo.settings import settings
+from template_python_fastapi_repo.settings import Settings
 from template_python_fastapi_repo.helpers.logger_helper import get_logger
 from template_python_fastapi_repo.tasks.tasks import (
     example_task,
@@ -16,6 +16,8 @@ app = FastAPI()
 
 # Get the configured logger
 logger = get_logger()
+
+settings = Settings()
 
 
 class TaskRequest(BaseModel):
